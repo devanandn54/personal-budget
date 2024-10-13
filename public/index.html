@@ -131,16 +131,7 @@
             datasets: [
                 {
                     data: [],
-                    backgroundColor: [
-                        '#ffcd56', // yellow
-                        '#ff6384', // pink/red
-                        '#36a2eb', // blue
-                        '#fd6b19', // orange
-                        '#4bc0c0', // teal
-                        '#9966ff', // purple
-                        '#ff9f40', // light orange
-                        '#c9cbcf'  // light gray
-                    ],
+                    backgroundColor: [],
 
                 }
             ],
@@ -161,7 +152,8 @@
                     // console.log(res.data)
                     for (var i = 0; i < res.data.myBudget.length; i++) {
                         data.datasets[0].data[i] = res.data.myBudget[i].budget;
-                        data.labels[i] = res.data.myBudget[i].title
+                        data.labels[i] = res.data.myBudget[i].title;
+                        data.datasets[0].backgroundColor[i] = res.data.myBudget[i].color;
                     }
                     createChart();
                 })
